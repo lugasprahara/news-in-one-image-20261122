@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>22 November 2026 — The Day in One Image</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1024px;height:1024px;overflow:hidden}
+  body{
+    font-family:"DejaVu Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    background:#f5eddc;color:#17353b;padding:12px;
+    display:flex;flex-direction:column;gap:7px;
+  }
+  /* ---------- masthead ---------- */
+  header{height:90px;flex:0 0 auto;display:flex;gap:9px}
+  .mast{
+    flex:1 1 auto;background:#0c383d;border-radius:10px;color:#fdf6e3;
+    padding:8px 18px 6px;position:relative;overflow:hidden;
+  }
+  .mast .kicker{font-size:11px;font-weight:800;letter-spacing:4.5px;color:#e9a13b}
+  .mast .dayline{display:flex;align-items:baseline;gap:16px;margin-top:1px;white-space:nowrap}
+  .mast .saturday{font-size:43px;font-weight:800;letter-spacing:1px;line-height:1.02}
+  .mast .saturday em{font-style:normal;color:#ff8c5a}
+  .mast .fulldate{font-size:21px;font-weight:800;letter-spacing:2px;color:#fdf6e3}
+  .mast .fulldate span{color:#ff8c5a}
+  .mast .edition{
+    position:absolute;right:16px;bottom:7px;font-size:9.5px;font-weight:700;
+    letter-spacing:1.8px;color:#bcd8d2;
+  }
+  .count{
+    flex:0 0 198px;background:#e4572e;border-radius:10px;color:#fff7ec;
+    padding:9px 14px 7px;overflow:hidden;
+  }
+  .count .n{font-size:25px;font-weight:800;line-height:1.05;white-space:nowrap}
+  .count .c{font-size:12px;font-weight:800;letter-spacing:2px;margin-top:3px;line-height:1.3}
+  .count .c small{font-size:10px;letter-spacing:1.6px;color:#ffe3c2}
+  /* ---------- cards ---------- */
+  .panel{background:#fffdf6;border:1.5px solid #d8cdb2;border-radius:10px;overflow:hidden;display:flex}
+  .num{
+    display:inline-flex;align-items:center;justify-content:center;width:19px;height:19px;
+    border-radius:50%;background:#e4572e;color:#fff;font-size:12px;font-weight:800;
+    margin-right:6px;flex:0 0 auto;vertical-align:1px;
+  }
+  .tag{font-size:9.5px;font-weight:800;letter-spacing:1.5px;color:#0d6e6b;text-transform:uppercase}
+  .headline{font-weight:800;color:#102e33;line-height:1.09}
+  .summary{color:#4c5a54;font-weight:600;line-height:1.2}
+  /* hero */
+  .hero{height:136px;flex:0 0 auto}
+  .hero .scene{flex:0 0 338px;background:#0c383d}
+  .hero .text{flex:1 1 auto;padding:8px 14px 7px}
+  .hero .tag{font-size:11px}
+  .hero .headline{font-size:24px;margin-top:3px}
+  .hero .summary{font-size:12px;margin-top:4px}
+  /* rows */
+  .strip{display:flex;gap:7px;flex:0 0 auto}
+  .strip .panel{flex:1 1 0;flex-direction:column}
+  .strip .scene{height:24px;flex:0 0 auto}
+  .strip .text{padding:4px 10px 5px}
+  .strip .headline{font-size:13.4px;margin-top:2px}
+  .strip .summary{font-size:9.4px;margin-top:3px;line-height:1.18}
+  .r-two{height:112px}
+  .r-two .headline{font-size:15px}
+  .r-two .summary{font-size:9.8px}
+  .r-three-a{height:128px}
+  .r-three-b{height:126px}
+  .r-three-c{height:114px}
+  .scene svg{width:100%;height:100%;display:block}
+  .wash-a{background:#dcebe4}.wash-b{background:#f3e2c7}.wash-c{background:#d9e6ef}
+  .wash-d{background:#e8dfc8}.wash-e{background:#f0ddcf}.wash-f{background:#dde8d8}
+  .wash-g{background:#e6e0ef}.wash-h{background:#f3d9d2}.wash-i{background:#d8ecec}
+  .wash-j{background:#e9ecc9}.wash-k{background:#f6e3ee}
+  /* ---------- atlas band ---------- */
+  .atlas{
+    flex:1 1 auto;background:#0c383d;border-radius:10px;color:#d9ece7;
+    padding:8px 12px 7px;display:flex;flex-direction:column;min-height:0;overflow:hidden;
+  }
+  .atlas .atitle{display:flex;justify-content:space-between;align-items:baseline}
+  .atlas .atitle .t{font-size:13px;font-weight:800;letter-spacing:2.2px;color:#ffd9a8}
+  .atlas .atitle .t span{color:#ff8c5a}
+  .atlas .atitle .note{font-size:8.5px;font-weight:700;letter-spacing:1.2px;color:#8fb8ad}
+  .atlas .band{display:flex;gap:14px;margin-top:4px;flex:1 1 auto;min-height:0}
+  .atlas .map{flex:0 0 468px}
+  .atlas .map svg{width:100%;height:143px;display:block}
+  .briefs{flex:1 1 auto;display:flex;gap:14px;border-left:1px solid #1d5a60;padding-left:14px}
+  .briefs .bcol{flex:1 1 0}
+  .brief{font-size:9.3px;line-height:1.24;font-weight:600;color:#d9ece7;margin-bottom:4px}
+  .brief b{color:#e9a13b;font-weight:800}
+  .brief .place{color:#ff8c5a;font-weight:800;letter-spacing:.4px}
+  /* ---------- footer ---------- */
+  footer{
+    height:17px;flex:0 0 auto;display:flex;align-items:center;
+    font-size:7.9px;font-weight:700;letter-spacing:0;color:#6b6250;padding:0 2px;white-space:nowrap;overflow:hidden;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="mast">
+    <div class="kicker">THE DAY IN ONE IMAGE</div>
+    <div class="dayline">
+      <div class="saturday">SUN<em>DAY</em></div>
+      <div class="fulldate">22 NOVEMBER <span>2026</span></div>
+    </div>
+    <div class="edition">THE WORLD SINCE SATURDAY NIGHT — ONE FRAME, THE WHOLE PLANET</div>
+  </div>
+  <div class="count">
+    <div class="n">22 STORIES</div>
+    <div class="c">6 CONTINENTS<br><small>ONE DAY · ONE FRAME</small></div>
+  </div>
+</header>
+
+<!-- 1 · HERO -->
+<article class="panel hero">
+  <div class="scene">
+    <svg viewBox="0 0 338 128" preserveAspectRatio="none">
+      <rect width="338" height="128" fill="#0c383d"/>
+      <circle cx="30" cy="18" r="8" fill="#e9a13b"/>
+      <g fill="#fdf6e3" opacity="0.7"><circle cx="70" cy="12" r="1.6"/><circle cx="120" cy="26" r="1.4"/><circle cx="180" cy="10" r="1.6"/><circle cx="226" cy="22" r="1.3"/><circle cx="96" cy="40" r="1.2"/></g>
+      <path d="M196 108 a34 34 0 0 1 30 -24" fill="none" stroke="#2a7a72" stroke-width="2.4"/>
+      <path d="M196 108 a52 52 0 0 1 46 -38" fill="none" stroke="#2a7a72" stroke-width="2" opacity="0.6"/>
+      <path d="M132 44 l12 5 l-12 5 l-4 -5 z" fill="#0a2c30"/><circle cx="138" cy="49" r="1.8" fill="#ff8c5a"/>
+      <g fill="#123f4d"><rect x="150" y="58" width="30" height="52"/><rect x="190" y="44" width="24" height="66"/><rect x="224" y="64" width="34" height="46"/><rect x="268" y="52" width="26" height="58"/></g>
+      <g fill="#fdf6e3" opacity="0.85"><rect x="158" y="68" width="6" height="6"/><rect x="170" y="82" width="6" height="6"/><rect x="198" y="56" width="6" height="6"/><rect x="198" y="74" width="6" height="6"/><rect x="232" y="74" width="6" height="6"/><rect x="276" y="64" width="6" height="6"/></g>
+      <rect x="52" y="66" width="52" height="44" fill="#1d5a60"/>
+      <path d="M46 66 h64 l-8 10 h-48 z" fill="#e4572e"/>
+      <g stroke="#ffd9a8" stroke-width="2.6" fill="none">
+        <path d="M316 8 L238 52"/><path d="M286 2 L224 46"/><path d="M330 34 L252 60"/>
+      </g>
+      <g fill="#ff8c5a"><circle cx="232" cy="54" r="9"/><circle cx="220" cy="46" r="7"/><circle cx="246" cy="62" r="8"/></g>
+      <g fill="#fdf6e3"><circle cx="232" cy="54" r="3.4"/><circle cx="220" cy="46" r="2.6"/><circle cx="246" cy="62" r="3"/></g>
+      <path d="M60 96 q10 -14 22 -4 M118 30 l10 6 l-10 6 l-4 -6 z" fill="#0a2c30"/>
+      <g fill="#e9a13b"><circle cx="70" cy="88" r="4"/><circle cx="76" cy="82" r="5"/><circle cx="66" cy="78" r="3"/></g>
+      <rect x="0" y="110" width="338" height="18" fill="#082226"/>
+      <path d="M0 110 h338" stroke="#e9a13b" stroke-width="3"/>
+    </svg>
+  </div>
+  <div class="text">
+    <div class="tag"><span class="num">1</span>Manama · Bahrain</div>
+    <div class="headline">Iran's Guards strike US positions in Bahrain in missile-and-drone attack</div>
+    <div class="summary">The IRGC said it hit US Patriot radars at two Bahrain bases overnight; Manama said an Iranian attack set a civilian industrial plant ablaze and its defences intercepted several more — the fourth such attack in nine days.</div>
+  </div>
+</article>
+
+<!-- row: 2, 3 -->
+<div class="strip r-two">
+  <article class="panel">
+    <div class="scene wash-b"><svg viewBox="0 0 300 30">
+      <circle cx="46" cy="15" r="10" fill="none" stroke="#0d6e6b" stroke-width="2.6"/><path d="M46 8 v7 l6 4" fill="none" stroke="#e4572e" stroke-width="2.4"/>
+      <path d="M84 22 h120 M84 14 h150" stroke="#0c383d" stroke-width="2.2"/>
+      <path d="M238 8 l10 14 M248 8 l-10 14" stroke="#c8402a" stroke-width="2.6"/>
+      <rect x="266" y="7" width="26" height="16" rx="3" fill="#e9a13b"/><path d="M271 15 h16" stroke="#0c383d" stroke-width="2.2"/>
+    </svg></div>
+    <div class="text">
+      <div class="tag"><span class="num">2</span>Antalya · Türkiye</div>
+      <div class="headline">COP31 climate talks near a final deal in overtime</div>
+      <div class="summary">Summit presidents unveiled a package they say every country can accept; delegations had until 03:00 GMT Sunday to object, with an approval session set for 06:00 GMT — though the text still names no fossil-fuel phase-out.</div>
+    </div>
+  </article>
+  <article class="panel">
+    <div class="scene wash-c"><svg viewBox="0 0 300 30">
+      <path d="M14 22 L84 10 L140 18 L206 8 L286 18" fill="none" stroke="#3d7ca8" stroke-width="2.6"/>
+      <circle cx="84" cy="10" r="4.4" fill="#e4572e"/><circle cx="206" cy="8" r="4.4" fill="#0c383d"/>
+      <path d="M120 24 l14 -10 l14 10 M134 14 v10" stroke="#0d6e6b" stroke-width="2.2" fill="none"/>
+      <rect x="238" y="16" width="40" height="9" rx="2" fill="#e9a13b"/>
+    </svg></div>
+    <div class="text">
+      <div class="tag"><span class="num">3</span>Kyiv · Moscow · Washington</div>
+      <div class="headline">US envoys carry Ukraine peace talks to Moscow and Dublin</div>
+      <div class="summary">Kushner and Witkoff moved on from Abu Dhabi's trilateral talks to brief Putin, while Zelenskyy floated G20 peace talks — and branded Putin a "killer" after Trump called him a friend.</div>
+    </div>
+  </article>
+</div>
+
+<!-- row: 4, 5, 6 -->
+<div class="strip r-three-a">
+  <article class="panel">
+    <div class="scene wash-d"><svg viewBox="0 0 200 30">
+      <path d="M14 24 l10 -12 l10 12 M44 24 l10 -12 l10 12 M74 24 l10 -12 l10 12" fill="none" stroke="#0c383d" stroke-width="2.4"/>
+      <g stroke="#3d7ca8" stroke-width="2.2"><path d="M126 6 v6 M142 4 v6 M158 6 v6 M174 4 v6"/></g>
+      <path d="M112 24 q20 -8 40 0 t40 0" fill="none" stroke="#3d7ca8" stroke-width="2.6"/>
+    </svg></div>
+    <div class="text">
+      <div class="tag"><span class="num">4</span>Gaza</div>
+      <div class="headline">Winter storm floods Gaza's tent camps</div>
+      <div class="summary">Heavy rain flooded the shelters of more than a million displaced people; wires also reported four Palestinians killed in ceasefire violations.</div>
+    </div>
+  </article>
+  <article class="panel">
+    <div class="scene wash-e"><svg viewBox="0 0 200 30">
+      <circle cx="42" cy="13" r="8" fill="none" stroke="#0c383d" stroke-width="2.4"/><path d="M37 13 h10 M42 8 v10" stroke="#c8402a" stroke-width="2.2"/>
+      <rect x="76" y="6" width="52" height="18" rx="3" fill="#0c383d"/><path d="M84 12 h36 M84 18 h24" stroke="#fdf6e3" stroke-width="2.2"/>
+      <path d="M150 8 l24 14 M174 8 L150 22" stroke="#e4572e" stroke-width="2.8"/>
+    </svg></div>
+    <div class="text">
+      <div class="tag"><span class="num">5</span>Sinaloa · Mexico</div>
+      <div class="headline">FBI Ten Most Wanted cartel boss 'Chapo Isidro' captured</div>
+      <div class="summary">Mexican special forces, backed by the US, seized the Sinaloa cartel figure in an operation that triggered intense violence across the state.</div>
+    </div>
+  </article>
+  <article class="panel">
+    <div class="scene wash-f"><svg viewBox="0 0 200 30">
+      <path d="M20 20 h64 l-8 6 h-46 z" fill="#0c383d"/><rect x="44" y="12" width="16" height="8" fill="#e4572e"/>
+      <path d="M104 24 q16 -10 32 0 t32 0 t24 0" fill="none" stroke="#3d7ca8" stroke-width="2.6"/>
+      <circle cx="152" cy="10" r="6" fill="none" stroke="#c8402a" stroke-width="2.4"/><path d="M152 5 v10 M147 10 h10" stroke="#c8402a" stroke-width="2"/>
+    </svg></div>
+    <div class="text">
+      <div class="tag"><span class="num">6</span>Strait of Hormuz</div>
+      <div class="headline">Two tankers struck near Oman as Hormuz crisis widens</div>
+      <div class="summary">The ships were hit near Oman amid escalating attacks in the strait; Tehran said another tanker caught fire after striking a mine.</div>
+    </div>
+  </article>
+</div>
+
+<!-- row: 7, 8, 9 -->
+<div class="strip r-three-b">
+  <article class="panel">
+    <div class="scene wash-g"><svg viewBox="0 0 200 30">
+      <path d="M30 5 h14 v8 a7 7 0 0 1 -14 0 z" fill="#e9a13b"/><path d="M28 24 h18" stroke="#0c383d" stroke-width="2.4"/>
+      <path d="M84 10 h44 M84 18 h44" stroke="#c8402a" stroke-width="2.6"/>
+      <rect x="146" y="6" width="34" height="18" rx="3" fill="#0c383d"/><path d="M154 15 l6 6 l10 -10" stroke="#e4572e" stroke-width="2.4" fill="none"/>
+    </svg></div>
+    <div class="text">
+      <div class="tag"><span class="num">7</span>Manipur · India</div>
+      <div class="headline">Spurious-liquor toll climbs to 16, some 600 in hospital</div>
+      <div class="summary">Deaths from suspected methanol-laced liquor in Chandel district rose again on Sunday, Xinhua reported, as hundreds remained under treatment.</div>
+    </div>
+  </article>
+  <article class="panel">
+    <div class="scene wash-h"><svg viewBox="0 0 200 30">
+      <rect x="26" y="5" width="7" height="20" rx="3" fill="#0c383d" transform="rotate(24 30 15)"/>
+      <circle cx="80" cy="18" r="7" fill="#c8402a"/>
+      <path d="M116 24 L166 8 M158 6 l12 3 l-4 11 z" fill="#e9a13b"/>
+      <path d="M10 26 h180" stroke="#2a7a4a" stroke-width="2.6"/>
+    </svg></div>
+    <div class="text">
+      <div class="tag"><span class="num">8</span>Wellington · New Zealand</div>
+      <div class="headline">Pant's 128 fires India to a record 720-9 declared</div>
+      <div class="summary">India's total is the highest innings score in Tests in New Zealand; the hosts closed day four 33-1, still 319 short of avoiding an innings defeat.</div>
+    </div>
+  </article>
+  <article class="panel">
+    <div class="scene wash-i"><svg viewBox="0 0 200 30">
+      <path d="M16 24 L44 8 L66 20 L92 6 L128 18 L160 10 L188 22" fill="none" stroke="#c8402a" stroke-width="2.6"/>
+      <path d="M96 24 v-10 M90 18 l6 -6 l6 6" stroke="#0c383d" stroke-width="2.4" fill="none"/>
+      <rect x="140" y="4" width="34" height="12" rx="2" fill="#0c383d"/><path d="M146 10 h22" stroke="#fdf6e3" stroke-width="2"/>
+    </svg></div>
+    <div class="text">
+      <div class="tag"><span class="num">9</span>Los Angeles · USA</div>
+      <div class="headline">Man convicted of arson in the deadly Palisades fire</div>
+      <div class="summary">A retrial jury found him guilty of fire-related charges over the blaze that devastated Pacific Palisades, after the first jury deadlocked.</div>
+    </div>
+  </article>
+</div>
+
+<!-- row: 10, 11, 12 -->
+<div class="strip r-three-c">
+  <article class="panel">
+    <div class="scene wash-j"><svg viewBox="0 0 200 30">
+      <rect x="18" y="6" width="54" height="18" rx="3" fill="#0c383d"/><path d="M26 12 h38 M26 18 h26" stroke="#ff8c5a" stroke-width="2.2"/>
+      <path d="M96 8 l14 14 M110 8 L96 22" stroke="#c8402a" stroke-width="3"/>
+      <circle cx="156" cy="15" r="9" fill="none" stroke="#0d6e6b" stroke-width="2.4"/><path d="M156 10 v5 l4 3" stroke="#e4572e" stroke-width="2.2" fill="none"/>
+    </svg></div>
+    <div class="text">
+      <div class="tag"><span class="num">10</span>Washington · USA</div>
+      <div class="headline">FBI criminal-data system breached, CNN reports</div>
+      <div class="summary">The hack of the bureau's criminal database raised fears that sensitive US security information could leak.</div>
+    </div>
+  </article>
+  <article class="panel">
+    <div class="scene wash-k"><svg viewBox="0 0 200 30">
+      <rect x="16" y="7" width="58" height="16" rx="2" fill="#0c383d"/><path d="M23 13 h44 M23 18 h30" stroke="#fdf6e3" stroke-width="2"/>
+      <path d="M92 8 l22 14 M114 8 L92 22" stroke="#c8402a" stroke-width="3"/>
+      <path d="M138 22 q14 -10 28 -2 M140 12 q12 -6 24 0" stroke="#0d6e6b" stroke-width="2.4" fill="none"/>
+    </svg></div>
+    <div class="text">
+      <div class="tag"><span class="num">11</span>Ankara · Türkiye</div>
+      <div class="headline">Ankara seizes the last big independent news outlet</div>
+      <div class="summary">The government took control of the country's final significant independent outlet amid a widening fraud scandal.</div>
+    </div>
+  </article>
+  <article class="panel">
+    <div class="scene wash-a"><svg viewBox="0 0 200 30">
+      <rect x="14" y="6" width="46" height="18" rx="3" fill="#0c383d"/><path d="M21 12 h32 M21 18 h22" stroke="#ff8c5a" stroke-width="2.2"/>
+      <circle cx="92" cy="15" r="8" fill="none" stroke="#0d6e6b" stroke-width="2.4"/><path d="M92 10 v5 l4 3" stroke="#e4572e" stroke-width="2.2" fill="none"/>
+      <path d="M122 22 l16 -12 l16 12 M138 10 v12" stroke="#0c383d" stroke-width="2.2" fill="none"/>
+    </svg></div>
+    <div class="text">
+      <div class="tag"><span class="num">12</span>Paris · France</div>
+      <div class="headline">Five 2027 hopefuls clash in a televised debate</div>
+      <div class="summary">France's prospective presidential candidates fought over tax, spending and social housing in a three-hour TF1 and LCI debate.</div>
+    </div>
+  </article>
+</div>
+
+<!-- atlas + briefs -->
+<section class="atlas">
+  <div class="atitle">
+    <div class="t">THE ATLAS <span>— SUNDAY IN BRIEFS</span></div>
+    <div class="note">NUMBERED DOTS = PANELS 1–12 · SCHEMATIC, NOT TO SCALE</div>
+  </div>
+  <div class="band">
+  <div class="map">
+    <svg viewBox="0 0 984 300">
+      <defs>
+        <pattern id="landdots" width="11" height="11" patternUnits="userSpaceOnUse">
+          <circle cx="3" cy="3" r="2.1" fill="#2a7a72"/>
+        </pattern>
+      </defs>
+      <rect width="984" height="300" fill="#0b2a2e"/>
+      <g fill="url(#landdots)" stroke="#1d5a60" stroke-width="1.4">
+        <path d="M42 78 L78 34 L168 22 L252 38 L268 78 L228 104 L236 138 L188 128 L150 148 L104 118 L58 112 Z"/>
+        <path d="M182 158 L238 146 L272 178 L258 244 L224 282 L198 224 L178 190 Z"/>
+        <path d="M452 62 L492 30 L552 34 L574 66 L548 92 L560 108 L512 112 L474 96 L450 84 Z"/>
+        <path d="M466 122 L528 106 L588 122 L602 176 L566 238 L508 244 L472 190 Z"/>
+        <path d="M566 44 L700 24 L838 34 L898 72 L872 116 L896 148 L812 168 L748 142 L668 154 L606 118 L574 76 Z"/>
+        <path d="M806 196 L902 182 L946 208 L928 252 L842 258 L804 232 Z"/>
+        <path d="M922 252 L968 246 L978 268 L946 284 L920 272 Z"/>
+      </g>
+      <g font-family="DejaVu Sans,Arial" font-size="17" font-weight="800" text-anchor="middle">
+        <g><circle cx="584" cy="138" r="13" fill="#e4572e" stroke="#fdf6e3" stroke-width="2"/><text x="584" y="143" fill="#fff">1</text></g>
+        <g><circle cx="528" cy="108" r="13" fill="#e4572e" stroke="#fdf6e3" stroke-width="2"/><text x="528" y="113" fill="#fff">2</text></g>
+        <g><circle cx="540" cy="64" r="13" fill="#e4572e" stroke="#fdf6e3" stroke-width="2"/><text x="540" y="69" fill="#fff">3</text></g>
+        <g><circle cx="548" cy="128" r="13" fill="#e4572e" stroke="#fdf6e3" stroke-width="2"/><text x="548" y="133" fill="#fff">4</text></g>
+        <g><circle cx="105" cy="120" r="13" fill="#e4572e" stroke="#fdf6e3" stroke-width="2"/><text x="105" y="125" fill="#fff">5</text></g>
+        <g><circle cx="614" cy="146" r="13" fill="#e4572e" stroke="#fdf6e3" stroke-width="2"/><text x="614" y="151" fill="#fff">6</text></g>
+        <g><circle cx="735" cy="140" r="13" fill="#e4572e" stroke="#fdf6e3" stroke-width="2"/><text x="735" y="145" fill="#fff">7</text></g>
+        <g><circle cx="952" cy="268" r="13" fill="#e4572e" stroke="#fdf6e3" stroke-width="2"/><text x="952" y="273" fill="#fff">8</text></g>
+        <g><circle cx="85" cy="100" r="13" fill="#e4572e" stroke="#fdf6e3" stroke-width="2"/><text x="85" y="105" fill="#fff">9</text></g>
+        <g><circle cx="150" cy="95" r="13" fill="#e4572e" stroke="#fdf6e3" stroke-width="2"/><text x="150" y="100" fill="#fff">10</text></g>
+        <g><circle cx="566" cy="86" r="13" fill="#e4572e" stroke="#fdf6e3" stroke-width="2"/><text x="566" y="91" fill="#fff">11</text></g>
+        <g><circle cx="486" cy="74" r="13" fill="#e4572e" stroke="#fdf6e3" stroke-width="2"/><text x="486" y="79" fill="#fff">12</text></g>
+      </g>
+      <g fill="#8fb8ad" font-family="DejaVu Sans,Arial" font-size="20" font-weight="700" letter-spacing="2">
+        <text x="52" y="166">N. AMERICA</text>
+        <text x="140" y="296">S. AMERICA</text>
+        <text x="486" y="266">AFRICA</text>
+        <text x="690" y="196">ASIA</text>
+        <text x="796" y="282">OCEANIA</text>
+      </g>
+    </svg>
+    <div style="font-size:8.8px;font-weight:600;color:#8fb8ad;margin-top:5px;line-height:1.3">Dot 1 is the hero: Bahrain, where Iran's Guards struck US positions overnight. Dots 2–12 follow the panel order across six continents.</div>
+  </div>
+  <div class="briefs">
+    <div class="bcol">
+      <div class="brief"><b>13</b> <span class="place">TWICKENHAM —</span> France and South Africa will contest the Nations Championship final on 29 Nov; Dupont says he is wary of the Springboks.</div>
+      <div class="brief"><b>14</b> <span class="place">MIAMI —</span> Columbus Crew thrashed Messi's Inter Miami in the MLS Cup playoff opener, sparking a furore.</div>
+      <div class="brief"><b>15</b> <span class="place">DOHA —</span> Qatar's defence chief and the CENTCOM commander held talks in Doha as regional tensions spiked.</div>
+      <div class="brief"><b>16</b> <span class="place">ZAGREB —</span> Croatians rallied in the capital demanding accountability over a psychiatric hospital incident.</div>
+      <div class="brief"><b>17</b> <span class="place">BRASILIA —</span> Former president Jair Bolsonaro is in intensive care with gastrointestinal problems.</div>
+    </div>
+    <div class="bcol">
+      <div class="brief"><b>18</b> <span class="place">HELSINKI —</span> Finland limited flights and shipping after Estonian alerts over potential drone risks.</div>
+      <div class="brief"><b>19</b> <span class="place">UNITED NATIONS —</span> States agreed at UN talks to create an international pact on autonomous weapons.</div>
+      <div class="brief"><b>20</b> <span class="place">WASHINGTON —</span> Lawmakers pushed to ban Chinese-made AI models from US federal systems.</div>
+      <div class="brief"><b>21</b> <span class="place">KALININGRAD —</span> Explosions were reported near Russia's Baltic Fleet base during drone activity.</div>
+      <div class="brief"><b>22</b> <span class="place">WASHINGTON —</span> The Pentagon released previously classified UFO footage filmed by the US military.</div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<footer>
+  <span>SOURCES: Reuters · AFP · IANS · Xinhua · ANI · CNN · euronews — every story day-checked against two independent sources; full checks in SOURCES.md</span>
+</footer>
+
+</body>
+</html>
