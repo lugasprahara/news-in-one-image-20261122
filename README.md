@@ -14,7 +14,7 @@ One 1024×1024 front page for Sunday 22 November 2026: Iran's missile-and-drone 
 mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
 ```
 
-Copies `entry.png` into `$MAKEFUN_OUTPUT_DIR` (or `/output`).
+Copies `entry.png` into `$MAKEFUN_OUTPUT_DIR` (or `/output`). Before copying, `main.ts` validates the image — it checks the PNG signature bytes and reads the width and height from the IHDR header (logging them to stderr), and it fails with a clear error if `entry.png` is missing or is not a PNG.
 
 ---
 
